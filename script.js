@@ -120,25 +120,25 @@ addFamilyButton?.addEventListener(
       <input
         type="text"
         name="family_name[]"
-        placeholder="Family member name"
+        placeholder="Family member name / परिवारका सदस्यको नाम"
       >
 
       <input
         type="text"
         name="family_occupation[]"
-        placeholder="Occupation"
+        placeholder="Occupation / पेशा"
       >
 
       <input
         type="text"
         name="family_relation[]"
-        placeholder="Relation"
+        placeholder="Relation / नाता"
       >
 
       <input
         type="text"
         name="family_age[]"
-        placeholder="Age / Year"
+        placeholder="Age / Year (वर्ष)"
       >
 
       <button
