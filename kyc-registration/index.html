@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>KYC Registration</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="container">
+
+<section class="card">
+
+  <div class="header">
+    <div class="logo">KYC</div>
+
+    <div>
+      <h1>KYC Registration</h1>
+      <p>Please provide the required information below.</p>
+    </div>
+  </div>
+
+
+  <form id="kycForm">
+
+    <!-- HONEYPOT -->
+    <input
+      type="text"
+      name="website"
+      id="website"
+      class="honeypot"
+      tabindex="-1"
+      autocomplete="off"
+    >
+
+
+    <!-- PERSONAL INFORMATION -->
+
+    <div class="section-title">
+      <span>1</span>
+      Personal Information
+    </div>
+
+    <div class="grid">
+
+      <div class="field full">
+        <label for="name">
+          Full Name <span>*</span>
+        </label>
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter full name"
+          required
+          maxlength="200"
+        >
+      </div>
+
+
+      <div class="field full">
+        <label for="address">
+          Address
+        </label>
+
+        <textarea
+          id="address"
+          name="address"
+          placeholder="Enter your full address"
+          maxlength="2000"
+          rows="3"
+        ></textarea>
+      </div>
+
+
+      <div class="field">
+        <label for="dateOfBirth">
+          Date of Birth
+        </label>
+
+        <input
+          type="date"
+          id="dateOfBirth"
+          name="dateOfBirth"
+        >
+      </div>
+
+
+      <div class="field">
+        <label for="mobile">
+          Mobile Number <span>*</span>
+        </label>
+
+        <input
+          type="tel"
+          id="mobile"
+          name="mobile"
+          placeholder="98XXXXXXXX"
+          required
+          maxlength="30"
+        >
+      </div>
+
+
+      <div class="field">
+        <label for="phone">
+          Phone Number
+        </label>
+
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Optional phone number"
+          maxlength="30"
+        >
+      </div>
+
+
+      <div class="field">
+        <label for="occupation">
+          Occupation
+        </label>
+
+        <input
+          type="text"
+          id="occupation"
+          name="occupation"
+          placeholder="Enter occupation"
+          maxlength="200"
+        >
+      </div>
+
+
+      <div class="field">
+        <label for="fatherName">
+          Father's Name
+        </label>
+
+        <input
+          type="text"
+          id="fatherName"
+          name="fatherName"
+          placeholder="Enter father's name"
+          maxlength="200"
+        >
+      </div>
+
+
+      <div class="field">
+        <label for="grandfatherName">
+          Grandfather's Name
+        </label>
+
+        <input
+          type="text"
+          id="grandfatherName"
+          name="grandfatherName"
+          placeholder="Enter grandfather's name"
+          maxlength="200"
+        >
+      </div>
+
+    </div>
+
+
+    <!-- PHOTO -->
+
+    <div class="section-title">
+      <span>2</span>
+      Photograph
+    </div>
+
+    <div class="photo-box">
+
+       <img
+    class="photo-preview"
+    id="photoPreview"
+    src=""
+    alt="Photo Preview"
+    style="display:none;"
+  >
+
+      <label class="upload-button" for="photo">
+        Choose Photo
+      </label>
+
+      <input
+        type="file"
+        id="photo"
+        accept="image/jpeg,image/png,image/webp"
+        hidden
+      >
+
+      <p class="help">
+        JPG, PNG or WEBP. Maximum size: 5 MB.
+      </p>
+
+    </div>
+
+
+    <!-- FAMILY MEMBERS -->
+
+    <div class="section-title family-heading">
+      <span>3</span>
+      Family Members
+    </div>
+
+    <div id="familyMembers"></div>
+
+    <button
+      type="button"
+      class="secondary-button"
+      id="addFamilyButton"
+    >
+      + Add Family Member
+    </button>
+
+
+    <!-- SUBMIT -->
+
+    <div class="submit-area">
+
+      <button
+        type="submit"
+        class="submit-button"
+        id="submitButton"
+      >
+        <span id="buttonText">Submit KYC</span>
+        <span id="loader" class="loader hidden"></span>
+      </button>
+
+      <p class="secure-text">
+        🔒 Your information is securely submitted.
+      </p>
+
+    </div>
+
+  </form>
+
+
+  <!-- SUCCESS -->
+
+  <div id="successMessage" class="result success hidden">
+
+    <div class="result-icon">✓</div>
+
+    <h2>Submission Successful</h2>
+
+    <p>
+      Your KYC information has been saved successfully.
+    </p>
+
+    <div class="kyc-number">
+      <small>KYC Number</small>
+      <strong id="kycNumber"></strong>
+    </div>
+
+    <button
+      type="button"
+      class="secondary-button"
+      id="newSubmission"
+    >
+      New Submission
+    </button>
+
+  </div>
+
+
+  <!-- ERROR -->
+
+  <div id="errorMessage" class="result error hidden">
+
+    <div class="result-icon">!</div>
+
+    <h2>Submission Failed</h2>
+
+    <p id="errorText">
+      Something went wrong.
+    </p>
+
+    <button
+      type="button"
+      class="secondary-button"
+      id="tryAgain"
+    >
+      Try Again
+    </button>
+
+  </div>
+
+</section>
+
+
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
