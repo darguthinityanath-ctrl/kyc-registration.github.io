@@ -1,1 +1,0 @@
-# kyc-registration.github.io
